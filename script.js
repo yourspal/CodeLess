@@ -21,15 +21,22 @@ $(document).ready(function() {
                 $(this).append(`<table class="data-table">
                                     <thead>
                                         <tr>
-                                            <th>Column 1</th>
-                                            <th>Column 2</th>
+                                            <th contenteditable="true">Column 1</th>
+                                            <th contenteditable="true">Column 2</th>
                                             <!-- Add more columns as needed -->
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Data 1</td>
-                                            <td>Data 2</td>
+                                            <td contenteditable="true">Data 1</td>
+                                            <td contenteditable="true">Data 2</td>
+                                            <!-- Add more data rows as needed -->
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td contenteditable="true">Data 1</td>
+                                            <td contenteditable="true">Data 2</td>
                                             <!-- Add more data rows as needed -->
                                         </tr>
                                     </tbody>
@@ -37,7 +44,7 @@ $(document).ready(function() {
                 // Initialize the datatable
                 $('.data-table').DataTable();
             } else if (data) {
-                $(this).append(`<input type="text" class="input-tool" value="${data}">`).append(`<button>click</button>`);
+                $(this).append(`<input type="text" class="input-tool" value="${data}">`);
                 // Make the newly created input field draggable
                 $(".input-tool").draggable({
                     revert: "invalid",
@@ -73,5 +80,22 @@ $(document).ready(function() {
     // Remove class on drag stop
     $(document).on("dragstop", ".input-tool", function() {
         $(this).removeClass("dragged");
+    });
+
+    // Make table cells editable after dropping
+    $(document).on("dblclick", ".data-table td", function() {
+        $(this).attr("contenteditable", "true").focus();
+    });
+
+    $(document).on("blur", ".data-table td", function() {
+        $(this).removeAttr("contenteditable");
+    });
+
+    $(document).on("dblclick", ".data-table th", function() {
+        $(this).attr("contenteditable", "true").focus();
+    });
+
+    $(document).on("blur", ".data-table th", function() {
+        $(this).removeAttr("contenteditable");
     });
 });
