@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.work-area {
+    margin-left: 200px; /* Adjust according to sidebar width */
+    padding: 20px;
+    min-height: 400px; /* Set minimum height for the work area */
+    border: 2px dashed #ccc; /* Add dashed border for visual indication */
+}
+
+.tool {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #ddd;
+}
+.fool {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.tool:hover {
+    background-color: #ccc;
+}
+
+.bin {
+    width: 100px;
+    height: 100px;
+    background-color: #f44336;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.data-table {
+    border-collapse: collapse;
+    width: 40%;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
