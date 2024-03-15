@@ -13,27 +13,25 @@ body {
     top: 0;
     overflow-y: auto;
     padding-top: 20px;
+    overflow-y: hidden;
 }
 
 .work-area {
     margin-left: 200px; /* Adjust according to sidebar width */
     padding: 20px;
-    min-height: 700px; /* Set minimum height for the work area */
+    min-height: 500px; /* Set minimum height for the work area */
     border: 2px dashed #ccc; /* Add dashed border for visual indication */
 }
-
+.abc{
+    margin-left: 210px;
+}
 .tool {
     padding: 10px 20px;
     margin-bottom: 5px;
     cursor: pointer;
     background-color: #ddd;
 }
-.fool {
-    padding: 10px 20px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    background-color: #ddd;
-}
+
 
 .tool:hover {
     background-color: #ccc;
@@ -51,15 +49,16 @@ body {
     right: 20px;
     cursor: pointer;
 }
-#fsub{
+.fsub{
     position: fixed;
-    background-color: rgb(30, 128, 158);
+    /* background-color: rgb(30, 128, 158); */
     right: 40%;
     bottom: 10%;
+    padding: 5px;
 }
 .data-table {
     border-collapse: collapse;
-    width: 40%;
+    width: 60%;
 }
 
 .data-table th,
@@ -71,4 +70,8 @@ body {
 
 .data-table tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+.cir{
+    border-radius: 100%;
 }

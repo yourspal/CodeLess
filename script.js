@@ -18,41 +18,41 @@ $(document).ready(function () {
             var data = ui.helper.attr("data-tool");
             if (data === "Table") {
                 // If dropped tool is a table, create a datatable
-                $(this).append(`<div class="table-container">
+                $(this).append(`<div class="table-container m-2">
                                     <table class="data-table">
                                         <thead>
                                             <tr>
-                                                <th contenteditable="true">Column 1</th>
-                                                <th contenteditable="true">Column 2</th>
-                                                
-                                                <button class="add-col-button">+ Column</button>
-                                                <button class="remove-col-button">- Column</button>
+                                                <th contenteditable="true">Column Head</th>
+                                                <th contenteditable="true">Column Head</th>
                                             </tr>
+                                            <button class="add-col-button cir btn btn-success">+ Column</button>
+                                            <button class="remove-col-button cir btn btn-danger">- Column</button>
+                                        
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td contenteditable="true">Data 1</td>
-                                                <td contenteditable="true">Data 2</td>
+                                                <td contenteditable="true">Click to Enter Data</td>
+                                                <td contenteditable="true">Click to Enter Data</td>
                                                 
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <button class="add-row-button">+ Row</button>
+                                    <button class="add-row-button cir btn btn-success">+ Row</button>
                                     
-                                    <button class="remove-row-button">- Row</button>
+                                    <button class="remove-row-button cir btn btn-danger">- Row</button>
                                     
                                 </div>`);
                 // Initialize the datatable
                 // $('.data-table').DataTable();
             }else if(data=="Butt"){
-                $(this).append(`<button class="btn-btn-outline-secondry">ClickMe</button>`);
+                $(this).append(`<button type="button" class="btn btn-outline-dark m-2">Click Here</button>`);
                 // Make the newly created input field draggable
                 $(".input-tool").draggable({
                     revert: "invalid",
                     zIndex: 100
                 });
             }else if(data=="Form"){
-                $(this).append(`<div class="input-group mb-3">
+                $(this).append(`<div class="input-group m-2">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
               </div>
@@ -89,20 +89,74 @@ $(document).ready(function () {
                     revert: "invalid",
                     zIndex: 100
                 });
-            }else if (data) {
-                $(this).append(`<input type="text" class="input-tool" value="${data}">`);
+            }else if(data=="NavBar"){
+                $(this).append(`<nav class="navbar navbar-expand-lg navbar-dark bg-dark m-2">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>`);
                 // Make the newly created input field draggable
                 $(".input-tool").draggable({
                     revert: "invalid",
                     zIndex: 100
                 });
-            } else {
+            }
+            else if (data=="pic"){
+                $(this).append(`<img src="stuff/invia-logo-navy.png" class="rounded float-end" style="height: 30px; width: 90px;"" alt="...">`)
+            }else if (data) {
+                $(this).append(`<div class="mb-3">
+                
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Click here to change the Input">
+              </div>`);
+                // Make the newly created input field draggable
+                $(".input-tool").draggable({
+                    revert: "invalid",
+                    zIndex: 100
+                });
+            // } else if(data=="TextArea"){
+            //     $(this).append(`<div class="input-group">
+            //     <span class="input-group-text">With textarea</span>
+            //     <textarea class="form-control" aria-label="With textarea"></textarea>
+            //   </div>`)
+        
+            }else{
                 $(this).append(ui.helper.clone());
             }
         }
     });
 
-    // Make bin droppable
+
     $("#bin").droppable({
         accept: ".input-tool",
         drop: function (event, ui) {
@@ -131,10 +185,10 @@ $(document).ready(function () {
     // Add Row
     $(document).on("click", ".add-row-button", function () {
         var $table = $(this).siblings(".data-table");
-        $table.find("tbody").append("<tr></tr>");
+        $table.find("tbody").append("<tr>Enter Data</tr>");
         var cols = $table.find("thead tr th").length;
         for (var i = 0; i < cols; i++) {
-            $table.find("tbody tr:last").append("<td contenteditable='true'></td>");
+            $table.find("tbody tr:last").append("<td contenteditable='true'>Enter Data</td>");
         }
     });
 
@@ -142,7 +196,7 @@ $(document).ready(function () {
     $(document).on("click", ".add-col-button", function () {
         var $table = $(this).siblings(".data-table");
         $table.find("thead tr").append("<th contenteditable='true'>New Column</th>");
-        $table.find("tbody tr").append("<td contenteditable='true'></td>");
+        $table.find("tbody tr").append("<td contenteditable='true'>Enter Data</td>");
     });
 
     // Remove Row

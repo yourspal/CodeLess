@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="Bundles/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>CodeLess</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="sidebar">
+    <div class="mx-5 mb-4 " > <h1>Tool-Bar</h1></div>
+    <div class="tool" data-tool="NavBar">Nav Bar</div>
     <div class="tool" data-tool="Input">Input</div>
-    <div class="tool" data-tool="Text Area">Text Area</div>
+    <!-- <div class="tool" data-tool="TextArea">Text Area</div> -->
     <div class="tool" data-tool="Table">Table</div>
-    <div class="fool" data-tool="Butt">BUTTON</div>
+    <div class="tool" data-tool="Butt">BUTTON</div>
     <div class="tool" data-tool="Form">Form</div>
+    <div class="tool" data-tool="pic">Image</div>
     <!-- Add more tools as needed -->
 </div>
 
+<h1 class="abc">Welcome to the Work Station</h1>
+<p class="abc">This is where you can work on your projects.</p>
 <div class="work-area" id="work-area">
     <!-- Your work station or empty space content goes here -->
-    <h1>Welcome to the Work Station</h1>
-    <p>This is where you can work on your projects.</p>
+
+
 </div>
-    <button type="button" class="btn btn-primary " id="fsub">Final submit</button>
+<div class="fsub">
+    <form class="d-flex">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button class="btn btn-outline-danger m-2" type="submit">Reset</button>
+        <button class="btn btn-outline-primary m-2">Final submit</button>
+    </form>
+</div>
 <div class="bin" id="bin">Trash Bin</div>
 <!-- <div id="table-options">
     <button id="add-row">Add Row</button>
@@ -32,7 +43,7 @@
     <button id="add-col">Add Column</button>
     <button id="remove-col">Remove Column</button>
 </div> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="Bundles/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="Bundles/jquery.dataTables.min.js"></script>
 <script src="Bundles/jquery-3.6.0.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></> -->
