@@ -149,7 +149,12 @@ $(document).ready(function () {
             //     <span class="input-group-text">With textarea</span>
             //     <textarea class="form-control" aria-label="With textarea"></textarea>
             //   </div>`)
-        
+            // }else if(data=="customImage"){
+            //     $(this).append(`<form action="/action_page.php">
+            //     <input type="file" id="myFile" name="filename">
+                
+            //   </form>`);
+            
             }else{
                 $(this).append(ui.helper.clone());
             }
