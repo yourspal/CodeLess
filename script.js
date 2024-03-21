@@ -5,12 +5,7 @@ $(document).ready(function () {
         helper: "clone",
         zIndex: 100
     });
-    $(".fool").draggable({
-        revert: "invalid",
-        helper: "clone",
-        zIndex: 100
-    });
-
+   
     // Make work area droppable
     $("#work-area").droppable({
         accept: ".tool, .input-tool, .fool",
@@ -45,7 +40,7 @@ $(document).ready(function () {
                 // Initialize the datatable
                 // $('.data-table').DataTable();
             }else if(data=="Butt"){
-                $(this).append(`<button type="button" class="btn btn-outline-dark m-2">Click Here</button>`);
+                $(this).append(`<button type="button" class="btn btn-outline-dark yo" style="margin-left: 500px;">Click Here</button>`);
                 // Make the newly created input field draggable
                 $(".input-tool").draggable({
                     revert: "invalid",
@@ -133,7 +128,21 @@ $(document).ready(function () {
                 });
             }
             else if (data=="pic"){
-                $(this).append(`<img src="stuff/invia-logo-navy.png" class="rounded float-end" style="height: 30px; width: 90px;"" alt="...">`)
+                $(this).append(`<img src="stuff/invia-logo-navy.png" class="rounded float-end" style="height: 30px; width: 90px;"alt="...">`)
+            
+            // } else if(data=="TextArea"){
+            //     $(this).append(`<div class="input-group">
+            //     <span class="input-group-text">With textarea</span>
+            //     <textarea class="form-control" aria-label="With textarea"></textarea>
+            //   </div>`)
+            }else if(data=="profilePic"){
+                $(this).append(`<div id="profile-pic" class="profile-pic float-end">
+                <!-- <label for="img" class="profile-pic-label"> -->
+                    <img id="profile-pic-img" src="stuff/profile.png" alt="Profile Picture">
+                    <input type="file" id="img" name="img" accept="image/*">
+                
+            </div>`);
+            
             }else if (data) {
                 $(this).append(`<div class="mb-3">
                 
@@ -144,17 +153,6 @@ $(document).ready(function () {
                     revert: "invalid",
                     zIndex: 100
                 });
-            // } else if(data=="TextArea"){
-            //     $(this).append(`<div class="input-group">
-            //     <span class="input-group-text">With textarea</span>
-            //     <textarea class="form-control" aria-label="With textarea"></textarea>
-            //   </div>`)
-            // }else if(data=="customImage"){
-            //     $(this).append(`<form action="/action_page.php">
-            //     <input type="file" id="myFile" name="filename">
-                
-            //   </form>`);
-            
             }else{
                 $(this).append(ui.helper.clone());
             }
@@ -162,12 +160,7 @@ $(document).ready(function () {
     });
 
 
-    $("#bin").droppable({
-        accept: ".input-tool",
-        drop: function (event, ui) {
-            ui.helper.remove();
-        }
-    });
+
 
     // Handle right click to initiate drag for input fields
     $(document).on("contextmenu", ".input-tool", function (event) {
@@ -237,4 +230,13 @@ $(document).ready(function () {
     $(document).on("blur", ".data-table th", function () {
         $(this).removeAttr("contenteditable");
     });
+    $(document).on("dblclick", ".yo", function () {
+        $(this).attr("contenteditable", "true").focus();
+    });
+
+    $(document).on("blur", ".yo", function () {
+        $(this).removeAttr("contenteditable");
+    });
+
+    
 });
