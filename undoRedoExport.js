@@ -48,14 +48,28 @@ $(document).ready(function(){
 	});
 
 	function exportWorkspace() {
-		var workspaceContent = $("#work-area").html(); // Get workspace content
+		// var workspaceContent = "<p>" + $("#work-area").html() + "</p>";
+        var workspaceContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Bundles/bootstrap.min.css" rel="stylesheet">
+    <title>CodeLess</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>${$("#work-area").html()}
+</body>
+</html>
+`;
 		
 		// Create a Blob object containing the workspace content
 		var blob = new Blob([workspaceContent], { type: "text/plain;charset=utf-8" });
 		
 		// Create a temporary anchor element
 		var anchor = document.createElement("a");
-		anchor.download = "workspace_content.txt"; // Set download filename
+		anchor.download = "CodeLess_Html.txt"; // Set download filename
 		
 		// Create a URL for the Blob object and assign it to the anchor's href attribute
 		anchor.href = window.URL.createObjectURL(blob);
