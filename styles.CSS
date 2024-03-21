@@ -18,6 +18,7 @@ body {
 
 .work-area {
     margin-left: 200px; /* Adjust according to sidebar width */
+    /* margin-top: 20px; */
     padding: 20px;
     min-height: 500px; /* Set minimum height for the work area */
     border: 2px dashed #ccc; /* Add dashed border for visual indication */
@@ -97,3 +98,28 @@ body {
     cursor: pointer;
 }
 
+#undo-btn,
+#redo-btn,
+#export-btn {
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+
+}
+  
+#undo-btn:hover,
+#redo-btn:hover,
+#export-btn:hover {
+    background-color: #0056b3;
+}
+ 
+#undo-btn:hover,
+#redo-btn:hover,
+#export-btn:hover {
+    background-color:  #1e7e34;
+}
